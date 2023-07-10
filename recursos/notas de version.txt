@@ -1,0 +1,3 @@
+MySQL 8.0.31
+NodeJS v18.16.0
+npm 9.8.0

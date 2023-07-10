@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "4a7c6474-0f3e-4e14-9000-e76e52173e27",
+		"name": "Empleados",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12532332"
+	},
+	"item": [
+		{
+			"name": "Crear un empleado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Libny contreras\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/empleados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"empleados"
+					]
+				},
+				"description": "el nombre del empleado es unico"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los empleados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/empleados?limit=2&offset=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"empleados"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "offset",
+							"value": "2"
+						}
+					]
+				},
+				"description": "usar limit y offset para una correcta paginacion.\n\nen caso de no usar limit, se consultaran todos los registros"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un empleado por su id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/empleados/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"empleados",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar un empleado por su id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"juan neri mejia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/empleados/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"empleados",
+						"8"
+					]
+				},
+				"description": "el nombre del empleado es unico\n\nno hay ningun tipo de constrain para limitar el comportamiento al actualizar o eliminar datos desde otras tablas"
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un empleado por su id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/empleados/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"empleados",
+						"4"
+					]
+				},
+				"description": "Borrado fisico"
+			},
+			"response": []
+		}
+	]
+}

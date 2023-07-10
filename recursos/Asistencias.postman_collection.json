@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "b3582fb6-66fd-4204-b8cf-c9a2ed2c6306",
+		"name": "Asistencias",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12532332"
+	},
+	"item": [
+		{
+			"name": "Registrar asistencia",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_empleado\": 9,\r\n    \"punch_in\": \"08:55\",\r\n    //\"punch_out\": \"13:00\",\r\n    \"fecha\": \"2023-07-09\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/asistencias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"asistencias"
+					]
+				},
+				"description": "el campo punch_out es opcional"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los registros de asistencias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/asistencias?limit=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"asistencias"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "4"
+						}
+					]
+				},
+				"description": "usar limit y offset para una correcta paginacion.\r\n\r\nen caso de no usar limit, se consultaran todos los registros"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener registro de asistencia por su id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/asistencias/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"asistencias",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar asistencia por su id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\": \"2023-07-09\",\r\n    \"punch_in\": \"08:55\",\r\n    \"punch_out\": \"15:30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/asistencias/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"asistencias",
+						"3"
+					]
+				},
+				"description": "En caso de querer cambiar el usuario al que pertenece esa asistencia, se debera hacer un nuevo registro usando el endpoint correspondiente.\n\nno hay ningun tipo de constrain para limitar el comportamiento al actualizar o eliminar datos desde otras tablas"
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar asistencia por id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/asistencias/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"asistencias",
+						"3"
+					]
+				},
+				"description": "Borrado fisico"
+			},
+			"response": []
+		}
+	]
+}

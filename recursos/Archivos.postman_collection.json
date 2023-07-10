@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "846ca8a7-9f6d-468d-b5cb-aeb5972f855d",
+		"name": "Archivos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12532332"
+	},
+	"item": [
+		{
+			"name": "Cargar excel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "hojaExcel",
+							"type": "file",
+							"src": "/C:/Users/ns/Downloads/Technical Test - Example Data.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/cargar-excel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cargar-excel"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
